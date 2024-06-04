@@ -1,0 +1,132 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-12 col-lg-12">
+            <div class="card imghealth">
+                <a routerLink="/clinic">
+                    <img src="/assets/images/health.jpg" class="card-img-top rounded" alt="Clinic">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 mb-3">
+            <div class="card imghealth text-center">
+                <a routerLink="/dogs">
+                    <img src="/assets/images/dogs.jpg" class="card-img-top rounded" alt="Dogs">
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+            <div class="card imghealth text-center">
+                <a routerLink="/cats">
+                    <img src="/assets/images/cats.jpg" class="card-img-top rounded" alt="Cats">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+
+
+
+
+
+<div class="carousel-item">
+    <img src="..." alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h5>...</h5>
+      <p>...</p>
+    </div>
+  </div>
+
+
+<br><br><br>
+    <div class="container ">
+        <div class="row justify-content-center ">
+            <div class="col-6 col-md-4 col-lg-2 mb-3 "  *ngFor="let catego of category">
+                <div class="card  imghealth text-center border-0" >
+                    <a >
+                        <img src="/assets/images/category/{{catego.name}}.jpg" routerLink="/{{catego.route}}"  class=" card-img-top rounded border-0" alt="...">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br><br><br>
+
+<!-- <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" 
+                                    data-interval="1000" data-pause="hover" data-wrap="false">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="/assets/images/carousel1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/assets/images/carousel2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/assets/images/carousel3.jpg" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div> -->
+<br><br><br>
+
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 col-md-4 col-lg-2 mb-3 position" *ngFor="let item of adv">
+            <div class="card border-light mb-3 "  style="min-width: 14rem;">
+                <div class="card-header text-center"><h6><i class="{{item.fawesome}} "></i>  {{item.title | titlecase}}</h6></div>
+                <div class="card-body">
+                    <p class="card-text text-center">{{item.details}}</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="card text-center border-light">
+        <div class="card-header">
+            <h4>{{'Who we are?' | titlecase}}</h4>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">Pets Egypt is Egypt's largest online pet store,
+                                    offering a wide range of cat and dog products, including food,
+                                    toys, medication, grooming supplies, beds, carriers, and more.
+                                    Plus, we are currently offering free shipping (T&C apply) to save you even more.
+                                    Shop now and take advantage of these great prices!</h6>
+        </div>
+        <div class="card-footer text-muted">
+            The Best dedicated veterinary pet care ever.
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<app-footer></app-footer>

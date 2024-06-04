@@ -1,0 +1,43 @@
+.nvlink{
+    color:rgb(32, 201, 151) !important;
+    text-decoration: underline none ;
+    transition: 1s ease !important;
+}
+.nvlink:hover{
+    text-decoration:underline !important;
+}
+
+
+.nvfb{
+    color: rgb(153, 153, 153) !important;
+    font-size: 22px !important;
+    text-decoration: none;
+}
+.nvfb:hover{
+    color: rgb(56, 108, 252) !important;
+    text-decoration: underline;
+}
+
+.nvinsta{
+    color: rgb(153, 153, 153) !important;
+    font-size: 22px !important;
+    text-decoration: none;
+}
+.nvinsta:hover{
+    color: rgb(216, 101, 135) !important;
+    text-decoration: underline;
+}
+
+.nvyoutube{
+    color: rgb(153, 153, 153) !important;
+    font-size: 22px !important;
+    text-decoration: none;
+}
+.nvyoutube:hover{
+    color: rgb(192, 22, 22) !important;
+    text-decoration: underline;
+}
+
+.nvfooter:hover{
+    text-decoration: underline;
+}

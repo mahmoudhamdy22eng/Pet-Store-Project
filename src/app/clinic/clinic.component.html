@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="Card col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let item of imgclinic">
+            <div class="card  h-100" >
+                <a routerLink="/"><img class="card-img-top rounded" src="/assets/images/clinic/{{item.src}}.jpg" 
+                                                            alt="Card image cap"></a>
+                <div class="card-body">
+                <p class="card-text">{{item.txt}}</p>
+                <p class="card-text"><strong>{{item.price | currency:'LE '}}</strong></p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center p-1">
+                    <a  href="#" class="btn btn-dark cartbtn  m-1">Add to Cart</a>
+                        <a href="#" class="btn btn-outline-danger  m-1"><i class="fa-regular fa-heart"></i>
+                            WishList</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<app-footer></app-footer>

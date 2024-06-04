@@ -1,0 +1,90 @@
+.nvlink{
+    margin-right: 25px;
+    color:rgb(32, 201, 151) !important;
+    text-decoration: underline none ;
+    transition: .5s ease !important;
+}
+.nvlink:hover{
+    border-radius: 25%; 
+    background-color:rgb(238, 237, 237);
+}
+
+#nvlink2{
+    margin-right: 15px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 10%;
+    transition: .5s ease !important;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+}
+#nvlink2:hover{
+    /* border: solid 1px;*/
+    border-radius: 25%; 
+    background-color:rgb(248, 221, 131);
+}
+
+#nvlink3{
+    margin-right: 15px;
+    padding-bottom: -5px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 10%;
+    transition: .5s ease !important;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+}
+#nvlink3:hover{
+    /* border: solid 1px;*/
+    border-radius: 25%; 
+    background-color:rgb(162, 219, 235);
+}
+
+#nvlink4{
+    margin-right: 15px;
+    background-color:rgb(255, 255, 255);
+    /* background-color:rgb(78, 228, 183); */
+    border-radius: 10%;
+    transition: .5s ease !important;
+    /* padding-left: 5px;
+    padding-right: 5px; */
+}
+#nvlink4:hover{
+    /* border: solid 1px;*/
+    border-radius: 25%; 
+    background-color:rgb(60, 212, 167);
+}
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+
+.nvfb{
+    color: rgb(153, 153, 153) !important;
+    font-size: 22px !important;
+    text-decoration: none;
+}
+.nvfb:hover{
+    color: rgb(56, 108, 252) !important;
+    text-decoration: underline;
+}
+
+.nvinsta{
+    color: rgb(153, 153, 153) !important;
+    font-size: 22px !important;
+    text-decoration: none;
+}
+.nvinsta:hover{
+    color: rgb(216, 101, 135) !important;
+    text-decoration: underline;
+}
+
+.nvyoutube{
+    color: rgb(153, 153, 153) !important;
+    font-size: 22px !important;
+    text-decoration: none;
+}
+.nvyoutube:hover{
+    color: rgb(192, 22, 22) !important;
+    text-decoration: underline;
+}
+
+.nvfooter:hover{
+    text-decoration: underline;
+}
