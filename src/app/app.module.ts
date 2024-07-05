@@ -15,7 +15,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableStoresComponent } from './table-stores/table-stores.component';
+import { TableClinicsComponent } from './table-clinics/table-clinics.component';
+import { TableCatsComponent } from './table-cats/table-cats.component';
+import { TableDogsComponent } from './table-dogs/table-dogs.component';
+import { UpdateownerComponent } from './updateowner/updateowner.component';
+import { UpdatestoreComponent } from './updatestore/updatestore.component';
+import { UpdateclinicComponent } from './updateclinic/updateclinic.component';
+import { UpdatepetComponent } from './updatepet/updatepet.component';
+import { Updatepet2Component } from './updatepet2/updatepet2.component';
 
 
 @NgModule({
@@ -31,14 +41,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    CartComponent
-  ],
+    CartComponent,
+    DashboardComponent,
+    TableStoresComponent,
+    TableClinicsComponent,
+    TableCatsComponent,
+    TableDogsComponent,
+    UpdateownerComponent,
+    UpdatestoreComponent,
+    UpdateclinicComponent,
+    UpdatepetComponent,
+    Updatepet2Component
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

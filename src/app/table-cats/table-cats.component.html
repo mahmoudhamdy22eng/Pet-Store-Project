@@ -1,0 +1,87 @@
+<!-- <app-header></app-header> -->
+
+
+<!-- Cats -->
+<div class="main-card mb-3 card container">
+    <div class="card-header">
+    <div class="card-header-title font-size-lg text-capitalize font-weight-normal d-flex text-center">
+        <h4 class="container">Cats</h4></div>
+    </div>
+    <div class="table-responsive">
+        <table class="align-middle text-truncate mb-0 table table-borderless table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">#ID</th>
+                    <!-- <th class="text-center">Avatar</th> -->
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Status(display)</th>
+                    <th class="text-center">Color</th>
+                    <th class="text-center">Age(years)</th>
+                    <th class="text-center">Added Date</th>
+                    <th class="text-center">Clinic Name</th>
+                    <th class="text-center">Store Name</th>
+                    <!-- <th class="text-center">Available Supplies</th> -->
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let cat of cats">
+                    <td class="text-center text-muted" style="width: 80px;">#{{cat.pet_id}}</td>
+                    <!-- <td class="text-center" style="width: 80px;">
+                        <img alt="" class="rounded-circle" src="./assets/images/avatars/1.jpg" width="40">
+                    </td> -->
+                    <td class="text-center">
+                        <h6>{{cat.pet_name|titlecase}}</h6>
+                    </td>
+                    <td class="text-center">
+                        <div style="color: green; font-size: 23px" *ngIf="cat.is_deleted == 0">
+                                <i class="fa-solid fa-check"></i></div>
+                        <div style="color: red; font-size: 23px" *ngIf="cat.is_deleted == 1">
+                                <i class="fa-solid fa-xmark"></i></div>
+                    </td>
+                    <td class="text-center">
+                        <h6>{{cat.pet_color|titlecase}}</h6>
+                    </td>
+                    <td class="text-center">
+                        <h6>{{cat.pet_age|titlecase}}</h6>
+                    </td>
+                    <td class="text-center">
+                        <span class="pr-2 opacity-6">
+                            <i class="fa fa-business-time"></i>
+                        </span> {{cat.pet_add_date}} 
+                    </td>
+                    <td class="text-center">
+                        <div *ngFor="let clinic of clinics">
+                            <span class="pr-2 opacity-6" *ngIf="clinic.clinic_id === cat.pet_clinic_no">
+                                {{ clinic.clinic_name | titlecase }}
+                            </span>
+                        </div>                            
+                    </td>
+                    <td class="text-center">
+                        <div *ngFor="let store of stores">
+                            <span class="pr-2 opacity-6" *ngIf="store.store_id === cat.pet_store_no">
+                                {{ store.store_name | titlecase }}
+                            </span>
+                        </div> 
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group-sm btn-group" role="group">
+                            <button class="btn-shadow btn btn-primary">Update</button>
+                            <button class="btn-shadow btn btn-danger">Remove</button>
+                        </div>
+                    </td>
+                </tr>
+                
+                </tbody>
+            </table>
+        </div>
+        <div class="d-block p-4 text-center card-footer">
+            <button class="btn-pill btn-shadow btn-wide fsize-1 btn btn-success btn-lg">
+                <span class="mr-2"><i class="fa-solid fa-circle-plus"></i> Add New Cat</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- <app-footer></app-footer> -->

@@ -1,0 +1,157 @@
+
+<div class="vh-100">
+    <section  style="background-color:rgb(238, 238, 238)">
+        <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+                
+            <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5 px-5">
+                    <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-2">{{'Add/Update Pet' |titlecase}} </p>
+            
+                    <form class="mx-1 mx-md-4 form" [formGroup]="form" >
+                        <!-- Pet Name -->
+                        <div *ngIf="f['name'].invalid && f['name'].touched " style="color:red" class="msgerror">
+                            <div *ngIf=" f['name'].errors && f['name'].errors['required']"> <small>Name is required</small> </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                        <i class="fa-solid fa-paw fa-lg me-3 fa-fw"></i>
+                        <div data-mdb-input-init class="form-outline flex-fill ">
+                            <input type="text" id="name" name="name" class="form-control" formControlName="name" />
+                            <label class="form-label" for="name">Pet Name</label>
+                        </div>
+                        </div>
+
+                        <!-- Pet Type -->
+                        <div *ngIf="f['store'].invalid && f['store'].touched" style="color:red" class="msgerror">
+                            <div *ngIf="f['store'].errors && f['store'].errors['required']"> <small>Type is required</small> </div>
+                            <!-- <div *ngIf="f['store'].errors && f['store'].errors['pattern']"> <small>store must start with 01</small> </div> -->
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                            <i class="fa-solid fa-shop fa-lg me-3 fa-fw"></i>
+                            <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                <label class="form-label me-3" for="store">Pet Type</label>
+                                <select formControlName="type">
+                                    <option disabled selected>Select a Type</option>
+                                    <option *ngFor="let type of pettype" [ngValue]="type.pet_type_id">
+                                        {{ type.pet_type_name }}
+                                    </option>
+                                </select>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Pet color -->
+                        <div *ngIf="f['name'].invalid && f['name'].touched " style="color:red" class="msgerror">
+                            <div *ngIf=" f['name'].errors && f['name'].errors['required']"> <small>Color is required</small> </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                        <i class="fa-solid fa-palette fa-lg me-3 fa-fw"></i>
+                        <div data-mdb-input-init class="form-outline flex-fill ">
+                            <input type="text" id="color" name="color" class="form-control" formControlName="color" />
+                            <label class="form-label" for="color">Pet color</label>
+                        </div>
+                        </div>
+
+                        <!-- Pet age -->
+                        <div *ngIf="f['age'].invalid && f['age'].touched " style="color:red" class="msgerror">
+                            <div *ngIf=" f['age'].errors && f['age'].errors['required']"> <small>Age is required</small> </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                        <i class="fa-regular fa-calendar-days fa-lg me-3 fa-fw"></i>
+                        <div data-mdb-input-init class="form-outline flex-fill ">
+                            <input type="text" id="age" name="age" class="form-control" formControlName="age"/>
+                            <label class="form-label" for="age">Age</label>
+                        </div>
+                        </div>
+    
+                        
+                        <!-- Store name -->
+                        <div *ngIf="f['store'].invalid && f['store'].touched" style="color:red" class="msgerror">
+                            <div *ngIf="f['store'].errors && f['store'].errors['required']"> <small>store is required</small> </div>
+                            <!-- <div *ngIf="f['store'].errors && f['store'].errors['pattern']"> <small>store must start with 01</small> </div> -->
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                            <i class="fa-solid fa-shop fa-lg me-3 fa-fw"></i>
+                            <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                <label class="form-label me-3" for="store">Store Name</label>
+                                <select formControlName="store">
+                                    <option disabled selected>Select a Store</option>
+                                    <option *ngFor="let store of stores" [ngValue]="store.store_id">
+                                        {{ store.store_name }}
+                                    </option>
+                                </select>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <!-- Clinic name -->
+                        <div *ngIf="f['clinic'].invalid && f['clinic'].touched" style="color:red" class="msgerror">
+                            <div *ngIf="f['clinic'].errors && f['clinic'].errors['required']"> <small>clinic is required</small> </div>
+                            <!-- <div *ngIf="f['clinic'].errors && f['clinic'].errors['pattern']"> <small>clinic must start with 01</small> </div> -->
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                            <i class="fa-solid fa-house-chimney-medical fa-lg me-3 fa-fw"></i>
+                            <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                <label class="form-label me-3" for="clinic">Clinic Name</label>
+                                <select formControlName="clinic">
+                                    <option disabled selected>Select a Cl</option>
+                                    <option *ngFor="let clinic of clinics" [ngValue]="clinic.clinic_id" >
+                                        {{ clinic.clinic_name }}
+                                    </option>
+                                </select> 
+                                
+                            </div>
+                        </div>
+                        <!-- <td class="text-center">
+                            <div *ngFor="let clinic of clinics">
+                                <span class="pr-2 opacity-6" *ngIf="clinic.clinic_id === pets.pet_clinic_no">
+                                    {{ clinic.clinic_name | titlecase }}
+                                </span>
+                            </div>                            
+                        </td> -->
+                                
+                        <!-- Checkbox -->
+                        <div *ngIf="f['cbox'].invalid && f['cbox'].touched " style="color:red" class="msgerror">
+                            <div *ngIf=" f['cbox'].errors && f['cbox'].errors['required']"> <small>Please check Terms of service</small> </div>
+                        </div>
+                        <div class="form-check d-flex justify-content-center mb-5 form-group">
+                            <input class="form-check-input me-2" type="checkbox" id="exampleCheck1" formControlName="cbox" />
+                            
+                            <label class="form-check-label" for="exampleCheck1">
+                                    I agree all statements in <a href="/signup">Terms of service</a>
+                            </label>
+                        </div>
+                                
+                        <!-- Submit -->
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 form-group">
+                        <button  type="submit" (click)="submit()" [disabled]="form.invalid" 
+                        data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Confirm</button>
+                                
+                            <p class="small fw-bold mx-4 pt-1 mb-0">Already have an account? <a routerLink="/login"
+                                    class="link-danger">Sign In</a></p>
+                        </div>
+                                <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">                                
+                                    <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a routerLink="/login"
+                                        class="link-danger">Sign In</a></p>
+                                    </div> -->
+                    </form>
+                </div>
+    
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                    <img src="/assets/images/signup/signup.png"
+                        class="img-fluid" alt="Sample image">
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+        
+    </div>
+    

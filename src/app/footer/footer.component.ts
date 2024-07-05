@@ -15,7 +15,7 @@ export class FooterComponent {
   islogined() :boolean{
     return  this.route.url =="/home" || this.route.url =="/store" || this.route.url =="/cats" 
           || this.route.url =="/dogs" || this.route.url =="/clinic" 
-          || this.route.url =="/wishlist" || this.route.url =="/cart"
+          || this.route.url =="/wishlist" || this.route.url =="/cart" || this.route.url =="/dashboard"
     
   };
 

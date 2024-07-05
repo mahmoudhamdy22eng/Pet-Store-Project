@@ -9,6 +9,7 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <!-- <li><button class="btn btn-sm btn-outline-secondary" type="button">Home</button></li> -->
             <li><a routerLink="/home" class="nav-link px-2 text-dark nvlink"><h5>{{'Home'|uppercase}}</h5></a></li>
+            <li><a routerLink="/store" class="nav-link px-2 text-dark nvlink1"><h5>{{'Store'|uppercase}}</h5></a></li>
             <li *ngFor="let items of nvlist"><a routerLink="/{{items.path}}" id="{{items.hover}}" class="nav-link px-2 text-dark">
                 <h5>{{items.path|uppercase}}</h5></a>
             </li>
@@ -25,8 +26,10 @@
             <div class="text-end">
             <button type="button" class="btn btn-outline-dark me-2" routerLink="/cart">
                                         <i class="fa-solid fa-cart-shopping"></i> Cart</button>
-            <button type="button" class="btn btn-outline-danger me-2" routerLink="/wishlist">
-                                        <i class="fa-regular fa-heart"></i> Wishlist</button>
+            <button type="button" class="btn btn-outline-danger me-2" (click)="Logout()">
+                                        <i class="fa-solid fa-circle-user"></i> Log-out</button>
+            <!-- <button type="button" class="btn btn-danger me-2" (click)="Logout()">
+                                        <i class="fa-solid fa-circle-user"></i> Log-out</button> -->
             <button type="button" class="btn btn-success me-2" routerLink="/login">
                                         <i class="fa-solid fa-arrow-right-to-bracket"></i> Login</button>
             <button type="button" class="btn btn-warning" routerLink="/signup">

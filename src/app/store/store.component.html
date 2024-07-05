@@ -1,6 +1,27 @@
 <app-header></app-header>
 
-
+<div class="container">
+    <div class="row">
+        <div class="Card col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let store of stores">
+            <div class="card  h-100" >
+                <!-- <a routerLink="/"><img class="card-img-top rounded" src="/assets/images/clinic/{{user.users_phone}}.jpg" 
+                                                            alt="Card image cap"></a> -->
+                <div class="card-body">
+                    <!-- image -->
+                <img class="card-img-top rounded" src="{{store.store_img}}" 
+                                                    alt="Card image cap">
+                <h5 class="card-text">Store Name : <b>{{store.store_name}}</b></h5>
+                <h6 class="card-text">Address : <b>{{store.store_address}}</b></h6>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center p-1">
+                    <a  href="http://localhost:4200/store/{{store.store_id}}" class="btn btn-dark cartbtn  m-1">Details</a>
+                        <!-- <a href="#" class="btn btn-outline-danger  m-1"><i class="fa-regular fa-heart"></i>
+                            WishList</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

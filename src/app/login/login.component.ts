@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -10,51 +11,48 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   form:FormGroup
+  name:string="";
+  pass:string="";
 
-  constructor(private formBuilder:FormBuilder, private router:Router){
+  message:any ='';
+  message2:any ='';
+  constructor(private formBuilder:FormBuilder, private router:Router, private api:ApiService){
     this.form = this.formBuilder.group({
-      email:['',[Validators.email,Validators.required]],
-      pass:['',[Validators.required]],
+      // email:['',[Validators.email,Validators.required]],
+      name:['',[Validators.required]],
+      pass:['',[Validators.required]]
       // cbox:['',[Validators.required]]      
     })
     
   }
 
-  mailcheck:string="admin@gmail.com";
-
-  passcheck:string="123";
 
 
   get f(){
     return this.form.controls
   }
 
-  // check(){
-  //   if(this.form.value.email == this.mailcheck && this.form.value.pass == this.passcheck 
-  //     && this.ischecked == true){
-  //         alert("login success")
-  //         this.router.navigate(['/home'])
-  //   }
-  //   else if (this.ischecked == false){
-  //     alert("check the box")
-  //   }
-  //   else{
-  //     alert("login failed")
-  //   }
-  // }
 
   submit(){
-    if(this.form.value.email == this.mailcheck && this.form.value.pass == this.passcheck){
-
-      alert("signup success")
-      this.router.navigate(['/home'])
-      .then(() => {
-        window.location.reload();
-      })
-    }
-    else {
-      alert("User Not Found")
-      this.form.reset()
-    }
-}
-}
+    this.message='';
+    this.message2='';
+    
+    this.api.login(this.form.value)
+      .subscribe({next:(data:any)=>{
+        console.log(data['message']);
+        if(data['message'] ==  'User not found'){
+          alert('User not found');
+        }else if(data['message'] == 'Incorrect password'){
+          alert('Incorrect password');
+        }else if(data['message'] == 'Login successful'){
+          alert('Login successfully');
+          // localStorage.setItem('user-data',JSON.stringify(this.form.value))
+          localStorage.setItem('user-data-login',JSON.stringify(data['user-data']));
+          this.router.navigate(['/home'])
+          .then(()=>{
+            window.location.reload();
+          }
+      )}}
+    });
+  }
+}              
